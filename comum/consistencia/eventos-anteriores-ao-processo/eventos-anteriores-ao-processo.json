@@ -1,0 +1,4 @@
+{
+  "nome": "eventos.anterior.a.processo" ,
+  "descricao": "Identifica eventos associados a processos que possuem uma data de atualização (dt_atualizacao) anterior à data de início do processo (dt_inicio), apontando possíveis inconsistências temporais nos registros"
+}

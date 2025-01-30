@@ -1,0 +1,4 @@
+{
+  "nome": "tarefas.com.eventos.ausentes",
+  "descricao": "Identifica tarefas no sistema de gerenciamento processual (jbpm_taskinstance) que possuem eventos correspondentes esperados, mas que não têm pelo menos um desses eventos registrados na tabela de eventos processuais (tb_processo_evento). Isso garante que as tarefas estão completas em relação aos eventos esperados e que não há inconsistências no fluxo processual"
+}
