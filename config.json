@@ -8,6 +8,13 @@
       "count_only": false
     },
     {
+      "nome": "teste1",
+      "descricao": "Consulta SQL para teste1.",
+      "caminho": "comum/teste1.sql",
+      "cron": "0 0 * * *",
+      "count_only": false
+    },
+    {
       "nome": "teste2",
       "descricao": "Consulta SQL para teste2.",
       "caminho": "comum/teste2.sql",
