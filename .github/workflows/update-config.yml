@@ -1,4 +1,3 @@
-
 name: Atualizar config.json
 
 on:
@@ -24,7 +23,12 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Instalar dependências
+        run: npm install @actions/github
+
       - name: Atualizar config.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node .github/scripts/updateConfig.js
 
       - name: Commit e Push das mudanças
