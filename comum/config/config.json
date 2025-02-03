@@ -1,6 +1,8 @@
 {
-    "item-de-verificacao":{
+    {
+        "item-de-verificacao":{
         "nome": "processos-sem-usuario-cadastro",
         "path": "completude/processos-sem-usuario-cadastro"
+        }
     }
 }
