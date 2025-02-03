@@ -14,7 +14,7 @@ function getSQLFiles(dir) {
 
     const parts = filePath.split('/');
     const fileName = parts.pop(); 
-    const dirPath = parts.join('/') + '/'; 
+    const dirPath = parts.join('/'); 
 
     if (stat && stat.isDirectory()) {
       results = results.concat(getSQLFiles(filePath));
