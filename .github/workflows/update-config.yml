@@ -1,0 +1,29 @@
+name: Atualizar config.json
+
+on:
+  push:
+    paths:
+      - 'queries/**/*.sql'
+  pull_request:
+    paths:
+      - 'queries/**/*.sql'
+
+jobs:
+  update-config:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Atualizar config.json
+        run: node .github/scripts/updateConfig.js
+
+      - name: Verificar mudanças
+        run: |
+          git diff --quiet || (git config --global user.name "github-actions" && git config --global user.email "actions@github.com" && git add config.json && git commit -m "Atualização automática do config.json" && git push)
