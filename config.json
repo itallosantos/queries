@@ -1,21 +1,21 @@
 {
   "verificacoes": [
     {
-      "nome": "tarefas-com-eventos-ausentes",
+      "nome": "tarefas-com-eventos-ausentes.sql",
       "descricao": "Consulta SQL para tarefas-com-eventos-ausentes.",
       "caminho": "comum/completude/tarefas-com-eventos-ausentes/tarefas-com-eventos-ausentes.sql",
       "cron": "0 0 * * *",
       "count_only": false
     },
     {
-      "nome": "eventos-anteriores-ao-processo",
+      "nome": "eventos-anteriores-ao-processo.sql",
       "descricao": "Consulta SQL para eventos-anteriores-ao-processo.",
       "caminho": "comum/consistencia/eventos-anteriores-ao-processo/eventos-anteriores-ao-processo.sql",
       "cron": "0 0 * * *",
       "count_only": false
     },
     {
-      "nome": "situacoes-com-data-invalida",
+      "nome": "situacoes-com-data-invalida.sql",
       "descricao": "Consulta SQL para situacoes-com-data-invalida.",
       "caminho": "comum/consistencia/situacoes-com-data-invalida/situacoes-com-data-invalida.sql",
       "cron": "0 0 * * *",
