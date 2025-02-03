@@ -5,6 +5,5 @@ SELECT
     dt_fim
 FROM 
     core.tb_processo
-WHERE 1 = 1
-AND
+WHERE
     id_usuario_cadastro_processo IS NULL;
