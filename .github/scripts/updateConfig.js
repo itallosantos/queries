@@ -12,7 +12,7 @@ function getSQLFiles(dir) {
     const filePath = path.join(dir, file);
     const stat = fs.statSync(filePath);
 
-    const parts = file.split('/');
+    const parts = filePath.split('/');
     const fileName = parts.pop(); 
     const dirPath = parts.join('/') + '/'; 
 
