@@ -3,28 +3,28 @@
     {
       "nome": "processos-sem-usuario-cadastro.sql",
       "descricao": "Consulta SQL para processos-sem-usuario-cadastro.",
-      "caminho": "/",
+      "caminho": "comum/completude/processos-sem-usuario-cadastro/",
       "cron": "0 0 * * *",
       "count_only": false
     },
     {
       "nome": "tarefas-com-eventos-ausentes.sql",
       "descricao": "Consulta SQL para tarefas-com-eventos-ausentes.",
-      "caminho": "/",
+      "caminho": "comum/completude/tarefas-com-eventos-ausentes/",
       "cron": "0 0 * * *",
       "count_only": false
     },
     {
       "nome": "eventos-anteriores-ao-processo.sql",
       "descricao": "Consulta SQL para eventos-anteriores-ao-processo.",
-      "caminho": "/",
+      "caminho": "comum/consistencia/eventos-anteriores-ao-processo/",
       "cron": "0 0 * * *",
       "count_only": false
     },
     {
       "nome": "situacoes-com-data-invalida.sql",
       "descricao": "Consulta SQL para situacoes-com-data-invalida.",
-      "caminho": "/",
+      "caminho": "comum/consistencia/situacoes-com-data-invalida/",
       "cron": "0 0 * * *",
       "count_only": false
     }
