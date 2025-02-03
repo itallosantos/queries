@@ -3,10 +3,10 @@ name: Atualizar config.json
 on:
   push:
     paths:
-      - 'queries/**/*.sql'
+      - 'comum/**/*.sql'
   pull_request:
     paths:
-      - 'queries/**/*.sql'
+      - 'comum/**/*.sql'
 
 jobs:
   update-config:
