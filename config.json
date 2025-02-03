@@ -1,9 +1,9 @@
 {
   "verificacoes": [
     {
-      "nome": "processos-sem-usuario-cadastro",
+      "nome": "processos-sem-usuario-cadastro-1",
       "descricao": "Consulta SQL para processos-sem-usuario-cadastro.",
-      "caminho": "comum/completude/processos-sem-usuario-cadastro/processos-sem-usuario-cadastro.sql",
+      "caminho": "comum/completude/processos-sem-usuario-cadastro/processos-sem-usuario-cadastro-1.sql",
       "cron": "0 0 * * *",
       "count_only": false
     },
