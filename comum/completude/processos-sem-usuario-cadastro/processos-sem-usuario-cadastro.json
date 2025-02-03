@@ -1,4 +1,0 @@
-{
-    "nome": "processo.sem.usuario.cadastro",
-    "descricao": "Verifica os processos na tabela tb_processo que não possuem um usuário responsável registrado no campo id_usuario_cadastro_processo, indicando registros incompletos"
-}

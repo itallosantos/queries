@@ -1,5 +1,0 @@
-{
-    "nome": "situacoes.com.data.invalida",
-    "descricao": "Identifica registros na tabela tb_situacao_processual em que a data inicial (dt_inicial) é posterior à data final (dt_final), indicando inconsistências temporais nos registros de situações processuais"
-
-}
