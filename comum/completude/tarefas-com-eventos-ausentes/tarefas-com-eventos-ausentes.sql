@@ -13,7 +13,7 @@ INNER JOIN
 jbpm_taskinstance jt ON tpi.id_proc_inst = jt.procinst_
 LEFT JOIN
 core.tb_processo_evento tpe ON tpe.id_jbpm_task = jt.id_
-WHERE
-tpe.id_evento IS NULL
+WHERE 1=1
+AND tpe.id_evento IS NULL
 ORDER BY
 jt.create_ ASC;
