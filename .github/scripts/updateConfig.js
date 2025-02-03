@@ -12,13 +12,17 @@ function getSQLFiles(dir) {
     const filePath = path.join(dir, file);
     const stat = fs.statSync(filePath);
 
+    const parts = file.split('/');
+    const fileName = parts.pop(); 
+    const dirPath = parts.join('/') + '/'; 
+
     if (stat && stat.isDirectory()) {
       results = results.concat(getSQLFiles(filePath));
     } else if (file.endsWith('.sql')) {
       results.push({
         nome: path.basename(file),
         descricao: `Consulta SQL para ${file.replace('.sql', '').replace(/_/g, ' ')}.`,
-        caminho: path.dirname(file),
+        caminho: dirPath,
         cron: "0 0 * * *",  // Default para execução diária à meia-noite
         count_only: false   // Default como false
       });
