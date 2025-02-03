@@ -16,9 +16,9 @@ function getSQLFiles(dir) {
       results = results.concat(getSQLFiles(filePath));
     } else if (file.endsWith('.sql')) {
       results.push({
-        nome: file.replace(/_/g, ' '),
+        nome: path.basename(file),
         descricao: `Consulta SQL para ${file.replace('.sql', '').replace(/_/g, ' ')}.`,
-        caminho: filePath,
+        caminho: path.dirname(file),
         cron: "0 0 * * *",  // Default para execução diária à meia-noite
         count_only: false   // Default como false
       });
