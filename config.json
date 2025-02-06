@@ -1,6 +1,13 @@
 {
   "verificacoes": [
     {
+      "nome": "numero-processos.sql",
+      "descricao": "Consulta SQL para numero-processos.",
+      "caminho": "comum/completude/numero-processos",
+      "cron": "0 0 * * *",
+      "count_only": false
+    },
+    {
       "nome": "processos-protocolados-sem-numero.sql",
       "descricao": "Consulta SQL para processos-protocolados-sem-numero.",
       "caminho": "comum/completude/processos-protocolados-sem-numero",
