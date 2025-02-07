@@ -53,6 +53,34 @@
         "cron": "0 0 * * *",
         "somente_contagem": false,
         "tribunais_excluidos": []    
-    }
+    },
+    {
+        "nome": "processos-arquivados-sem-evento",
+        "codigo": "IV-010-IN",
+        "descricao": "Identifica os processos que estão arquivados definitivamente(cd_evento='22'), mas que por alguma razão esses processos não possuem o (cd_evento='246', '22', '245', '14997', '14998') cujo ds_movimento='Arquivado Definitivamente'. (SCRIPT PJE 7130 - ENGENHARIA REVERSA) ",
+        "aspecto":"integridade",
+        "cron": "0 0 * * *",
+        "somente_contagem": false,
+        "tribunais_excluidos": []
+    },
+    {
+        "nome": "processos-redistribuidos-sem-evento",
+        "codigo": "IV-025-CO",
+        "descricao": "Avalia se os processos registrados na tabela tb_proc_trf_redistribuicao possuem ou não o evento de redistribuição (código de evento 36) registrado na tabela tb_processo_evento. A consulta classifica os processos em duas categorias: com_evento_36 (processos com o evento de redistribuição)",
+        "aspecto":"conformidade",
+        "cron": "0 0 * * *",
+        "somente_contagem": false,
+        "tribunais_excluidos": []
+    },
+    {
+        "nome": "processos-com-numero-duplicado",
+        "codigo": "IV-057-UN",
+        "descricao": "Identifica números de processo (nr_processo) que estão duplicados na tabela tb_processo, retornando a quantidade de registros para cada número duplicado",
+        "aspecto":"unicidade",
+        "cron": "0 0 * * *",
+        "somente_contagem": false,
+        "tribunais_excluidos": []
+    },
+    
     ]
 }
