@@ -81,6 +81,15 @@
         "somente_contagem": false,
         "tribunais_excluidos": []
     },
-    
+    {
+        "nome": "processos-conclusos-50-dias",
+        "codigo": "IV-071-ES",
+        "descricao": "Verifica todos os processos que possuem como último evento o evento e situação processual  Concluso. Essa situação é constituída por processos com evento concluso e Identificador - tipo de conclusão: para despacho/decisão, para julgamento.",
+        "aspecto":"estatistica",
+        "cron": "0 0 * * *",
+        "somente_contagem": false,
+        "tribunais_excluidos": []
+    }
+
     ]
 }
