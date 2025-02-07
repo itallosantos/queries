@@ -1,39 +1,58 @@
 {
-  "verificacoes": [
-    {
-      "nome": "numero-processos.sql",
-      "descricao": "Consulta SQL para numero-processos.",
-      "caminho": "comum/completude/numero-processos",
-      "cron": "0 0 * * *",
-      "count_only": false
+  "itens": [
+        {
+            "nome": "processos-sem-usuario-cadastro",
+            "codigo": "IV-064-CP",
+            "descricao": "Verifica os processos na tabela tb_processo que não possuem um usuário responsável registrado no campo id_usuario_cadastro_processo, indicando registros incompletos",
+            "aspecto":"completude",
+            "cron": "0 0 * * *",
+            "somente_contagem": false,
+            "tribunais_excluidos": ["tjmg"]    
+        },
+        {
+            "nome": "processos-distribuidos-sem-dt-autuacao",
+            "codigo": "IV-107-CP",
+            "descricao": "Identifica processos na tabela tb_processo_trf que foram distribuídos (in_tipo_distribuicao = 'S' ou 'I') e possuem registro de evento relacionado à distribuição (cd_evento=26 Distribuicao), mas que ainda não possuem uma data de autuação (dt_autuacao IS NULL). A ausência de dt_autuacao pode indicar um problema no fluxo de registro ou na finalização da distribuição processual",
+            "aspecto":"completude",
+            "cron": "0 0 * * *",
+            "somente_contagem": false,
+            "tribunais_excluidos": ["tjmg"]    
+        },
+        {
+          "nome": "redistribuicoes-redundantes-entre-oj",
+          "codigo": "IV-024-CS",
+          "descricao": "Identifica redistribuições de processos judiciais em que o órgão julgador anterior é igual ao novo órgão julgador. Além disso, ele calcula o número total de redistribuições redundantes e o número de processos únicos que possuem pelo menos uma redistribuição com essa característica. Redistribuições redundantes podem indicar falhas no registro ou erros no fluxo processual.",
+          "aspecto":"consistencia",
+          "cron": "0 0 * * *",
+          "somente_contagem": false,
+          "tribunais_excluidos": ["tjma"]    
+      },
+      {
+          "nome": "processos-com-eventos-anterior-ao-inicio",
+          "codigo": "IV-051-CS",
+          "descricao": "Identifica eventos associados a processos que possuem uma data de atualização (dt_atualizacao) anterior à data de início do processo (dt_inicio), apontando possíveis inconsistências temporais nos registros",
+          "aspecto":"consistencia",
+          "cron": "0 0 * * *",
+          "somente_contagem": false,
+          "tribunais_excluidos": ["tjes"]    
+      },
+      {
+        "nome": "situacoes-processuais-com-dt-invalida",
+        "codigo": "IV-065-CS",
+        "descricao": "Identifica registros na tabela tb_situacao_processual em que a data inicial (dt_inicial) é posterior à data final (dt_final), indicando inconsistências temporais nos registros de situações processuais",
+        "aspecto":"consistencia",
+        "cron": "0 0 * * *",
+        "somente_contagem": false,
+        "tribunais_excluidos": []    
     },
     {
-      "nome": "processos-protocolados-sem-numero.sql",
-      "descricao": "Consulta SQL para processos-protocolados-sem-numero.",
-      "caminho": "comum/completude/processos-protocolados-sem-numero",
-      "cron": "0 0 * * *",
-      "count_only": false
-    },
-    {
-      "nome": "processos-sem-usuario-cadastro.sql",
-      "descricao": "Consulta SQL para processos-sem-usuario-cadastro.",
-      "caminho": "comum/completude/processos-sem-usuario-cadastro",
-      "cron": "0 0 * * *",
-      "count_only": false
-    },
-    {
-      "nome": "eventos-anteriores-ao-processo.sql",
-      "descricao": "Consulta SQL para eventos-anteriores-ao-processo.",
-      "caminho": "comum/consistencia/eventos-anteriores-ao-processo",
-      "cron": "0 0 * * *",
-      "count_only": false
-    },
-    {
-      "nome": "situacoes-com-data-invalida.sql",
-      "descricao": "Consulta SQL para situacoes-com-data-invalida.",
-      "caminho": "comum/consistencia/situacoes-com-data-invalida",
-      "cron": "0 0 * * *",
-      "count_only": false
+        "nome": "processos-com-dt_autuacao-maior-dt_distribuicao",
+        "codigo": "IV-105-CS",
+        "descricao": "Verifica os processos cuja data de autuação (dt_autuacao) está registrada e identifica os casos em que o intervalo entre a data de distribuição (dt_distribuicao) e a data de autuação excede 2 dias. Além disso, a consulta restringe os processos cujo número (nr_processo) começa com o dígito 0.",
+        "aspecto":"completude",
+        "cron": "0 0 * * *",
+        "somente_contagem": false,
+        "tribunais_excluidos": []    
     }
-  ]
+    ]
 }
