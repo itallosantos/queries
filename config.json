@@ -16,7 +16,7 @@
             "aspecto":"completude",
             "cron": "0 0 * * *",
             "somente_contagem": false,
-            "tribunais_excluidos": ["tjmg"]    
+            "tribunais_excluidos": ["tjmg","tjes"]    
         },
         {
           "nome": "redistribuicoes-redundantes-entre-oj",
@@ -49,7 +49,7 @@
         "nome": "processos-com-dt_autuacao-maior-dt_distribuicao",
         "codigo": "IV-105-CS",
         "descricao": "Verifica os processos cuja data de autuação (dt_autuacao) está registrada e identifica os casos em que o intervalo entre a data de distribuição (dt_distribuicao) e a data de autuação excede 2 dias. Além disso, a consulta restringe os processos cujo número (nr_processo) começa com o dígito 0.",
-        "aspecto":"completude",
+        "aspecto":"consistencia",
         "cron": "0 0 * * *",
         "somente_contagem": false,
         "tribunais_excluidos": []    
