@@ -10,6 +10,15 @@
             "tribunais_excluidos": ["tjmg"]    
         },
         {
+            "nome": "inserindo-erro",
+            "codigo": "IV-0444-CP",
+            "descricao": "erro proposital",
+            "aspecto":"erro",
+            "cron": "0 0 * * *",
+            "somente_contagem": false,
+            "tribunais_excluidos": []    
+        },
+        {
             "nome": "processos-distribuidos-sem-dt-autuacao",
             "codigo": "IV-107-CP",
             "descricao": "Identifica processos na tabela tb_processo_trf que foram distribuídos (in_tipo_distribuicao = 'S' ou 'I') e possuem registro de evento relacionado à distribuição (cd_evento=26 Distribuicao), mas que ainda não possuem uma data de autuação (dt_autuacao IS NULL). A ausência de dt_autuacao pode indicar um problema no fluxo de registro ou na finalização da distribuição processual",
